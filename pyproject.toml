@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "ccwc"
+version = "0.1.0"
+description = "A wc-like tool implemented in Python"
+authors = ["Mukhammad Ginanjar Azie <mukhammad.azie@jatis.com>"]
+
+[tool.poetry.scripts]
+ccwc = "ccwc.main:main"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+python = "^3.7"
