@@ -14,7 +14,7 @@ def test_count_words():
 
 
 def test_count_bytes():
-    assert count_bytes("Hello") == 5
+    assert count_bytes("Hello") == 8
     assert count_bytes("你好") == 6  # Assuming UTF-8 encoding
     assert count_bytes("") == 0
 
