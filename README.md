@@ -56,7 +56,10 @@ cat example.txt | ccwc -l -w -c
 To contribute to `ccwc`, you can fork the repository and then clone your fork. After making your changes, submit a pull request.
 
 ## Testing
-Explain how to run the automated tests for this system (if applicable).
+To run unit test, run the following command in your terminal
+```bash
+poetry run pytest
+```
 
 ## License
 This project is licensed under the MIT License.
