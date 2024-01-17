@@ -1,6 +1,6 @@
 from ccwc.main import count_lines, count_words, count_bytes, count_characters, main
 
-from unittest.mock import patch, mock_open
+from unittest.mock import patch, mock_open, MagicMock
 
 
 def test_count_lines():
@@ -46,8 +46,9 @@ def test_main_with_lines_option():
 
     test_args = ['ccwc', '-c', 'test.txt']
     with patch('sys.argv', test_args):
-        with patch('builtins.open', mock_open(read_data=test_data)) as mock_file:
-            assert main() == '342190 test.txt'
+        with patch('builtins.open', mock_open(read_data=test_data)):
+            with patch('os.path.getsize', MagicMock(return_value=len(test_data))):
+                assert main() == f'{len(test_data)} test.txt'
 
     test_args = ['ccwc', 'test.txt']
     with patch('sys.argv', test_args):
